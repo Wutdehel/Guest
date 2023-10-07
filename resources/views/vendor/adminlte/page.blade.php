@@ -47,6 +47,12 @@
     @if(config('adminlte.right_sidebar'))
     @include('adminlte::partials.sidebar.right-sidebar')
     @endif
+
 </div>
 <x-notification-component />
+@stop
+
+@section('adminlte_js')
+@stack('js')
+@yield('js')
 @stop

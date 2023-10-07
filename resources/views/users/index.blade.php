@@ -1,23 +1,26 @@
 @extends('adminlte::page')
-@section('title', 'List User')
+@section('title', 'Data Pengguna')
 @section('content_header')
-<h1 class="m-0 text-dark">List User</h1>
+<h1 class="m-0 text-light">Data Pengguna</h1>
 @stop
 @section('content')
+
+<link rel="stylesheet" href="path/to/adminlte/css/adminlte.min.css">
+
 <div class="row">
     <div class="col-12">
         <div class="card">
-            <div class="card-body">
-                <a href="{{route('users.create')}}" class="btn btn-yellow bg-gradient-yellow mb-2">
-                    Tambah
-                </a>
-                <table class="table table-hover table-bordered table-stripped" id="example2">
+            <div class="card-body bg-gray">
+            <a href="{{route('users.create')}}" class="btn btn-warning text-dark mb-2">
+                Tambah
+            </a>
+                <table class="table  bg-gray-dark" id="example2">
                     <thead>
                         <tr>
-                            <th>No.</th>
-                            <th>Email</th>
-                            <th>Level</th>
-                            <th>Opsi</th>
+                            <th class="bg-warning">No.</th>
+                            <th class="bg-warning">Email</th>
+                            <th class="bg-warning">Level</th>
+                            <th class="bg-warning">Opsi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -27,11 +30,11 @@
                             <td>{{$user->email}}</td>
                             <td>{{$user->level}}</td>
                             <td>
-                                <a href="{{route('users.edit', $user)}}" class="btn btn-primary btn-xs">
+                                <a href="{{route('users.edit', $user)}}" class="btn btn-warning btn-xs">
                                     Edit
                                 </a>
                                 <a href="{{route('users.destroy', $user)}}" onclick="notificationBeforeDelete(event, this)" class="btn btn-danger btn-xs">
-                                    Delete
+                                    Hapus
                                 </a>
                             </td>
                         </tr>

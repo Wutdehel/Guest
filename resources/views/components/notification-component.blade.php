@@ -1,4 +1,5 @@
 <div>
+
 </div>
 @push('js')
 <script>
@@ -32,7 +33,8 @@
         toast_show('warning', message);
     }
 </script>
-@if($message = \Illuminate\Support\Facades\Session::get('success_message'))
+@if($message =
+\Illuminate\Support\Facades\Session::get('success_message'))
 @if(is_iterable($message))
 @foreach($message as $m)
 <script>
@@ -45,7 +47,8 @@
 </script>
 @endif
 @endif
-@if($message = \Illuminate\Support\Facades\Session::get('info_message'))
+@if($message =
+\Illuminate\Support\Facades\Session::get('info_message'))
 @if(is_iterable($message))
 @foreach($message as $m)
 <script>
@@ -58,7 +61,8 @@
 </script>
 @endif
 @endif
-@if($message = \Illuminate\Support\Facades\Session::get('warning_message'))
+@if($message =
+\Illuminate\Support\Facades\Session::get('warning_message'))
 @if(is_iterable($message))
 @foreach($message as $m)
 <script>
@@ -71,7 +75,8 @@
 </script>
 @endif
 @endif
-@if($message = \Illuminate\Support\Facades\Session::get('error_message'))
+@if($message =
+\Illuminate\Support\Facades\Session::get('error_message'))
 @if(is_iterable($message))
 @foreach($message as $m)
 <script>

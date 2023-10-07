@@ -1,7 +1,7 @@
 @extends('adminlte::page')
-@section('title', 'Tambah User')
+@section('title', 'Tambah Pengguna')
 @section('content_header')
-<h1 class="m-0 text-dark">Tambah User</h1>
+<h1 class="m-0 text-dark">Tambah Pengguna</h1>
 @stop
 @section('content')
 <form action="{{route('users.store')}}" method="post">
@@ -16,13 +16,13 @@
                         @error('email') <span class="text-danger">{{$message}}</span> @enderror
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword">Password</label>
-                        <input type="password" class="form-control @error('password') is-invalid @enderror" id="exampleInputPassword" placeholder="Password" name="password">
+                        <label for="exampleInputPassword">Kata Sandi</label>
+                        <input type="password" class="form-control @error('password') is-invalid @enderror" id="exampleInputPassword" placeholder="Kata Sandi" name="password">
                         @error('password') <span class="text-danger">{{$message}}</span> @enderror
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword">Konfirmasi Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword" placeholder="Konfirmasi Password" name="password_confirmation">
+                        <label for="exampleInputPassword">Konfirmasi Kata Sandi</label>
+                        <input type="password" class="form-control" id="exampleInputPassword" placeholder="Konfirmasi Kata Sandi" name="password_confirmation">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputlevel">Level</label>
@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    <button type="submit" class="btn btn-warning">Simpan</button>
                     <a href="{{route('users.index')}}" class="btn btn-default">
                         Batal
                     </a>

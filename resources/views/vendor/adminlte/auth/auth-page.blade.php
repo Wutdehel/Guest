@@ -41,17 +41,17 @@
                 @endif
 
                 {{-- Logo Label --}}
-                {!! config('adminlte.logo', '<b>Admin</b>LTE') !!}
+                {!! config('adminlte.logo', '<b>Sengked</b>Com') !!}
 
             </a>
         </div>
 
         {{-- Card Box --}}
-        <div class="card {{ config('adminlte.classes_auth_card', 'card-outline card-primary') }}">
+        <div class="card {{ config('adminlte.classes_auth_card', 'card-outline card-warning') }}">
 
             {{-- Card Header --}}
             @hasSection('auth_header')
-                <div class="card-header {{ config('adminlte.classes_auth_header', '') }}">
+                <div class="card-header {{ config('adminlte.classes_auth_header', '') }} bg-gray-dark">
                     <h3 class="card-title float-none text-center">
                         @yield('auth_header')
                     </h3>

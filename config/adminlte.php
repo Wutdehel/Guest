@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Jötunheimr',
+    'title' => 'Buku Tamu',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -63,12 +63,14 @@ return [
     |
     */
 
-    'logo' => '<br><b>Realible Web Hosting</b>',
-    'logo_img' => 'vendor/adminlte/dist/img/sengked2.png',
-    'logo_img_class' => 'brand-image  elevation-3',
+    'logo' => '<span class="text-light"><b>SENGKED.COM</b></span>',
+    'logo_img' => 'vendor/adminlte/dist/img/sengked.png',
+    'logo_img_class' => 'brand-image elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'Jötunheimr Logo',
+    'logo_img_alt' => 'Sengked.com Logo',
+
+
 
     /*
     |--------------------------------------------------------------------------
@@ -84,9 +86,9 @@ return [
     */
 
     'auth_logo' => [
-        'enabled' => false,
+        'enabled' => true,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => 'vendor/adminlte/dist/img/sengked.png',
             'alt' => 'Auth Logo',
             'class' => '',
             'width' => 50,
@@ -109,11 +111,11 @@ return [
     'preloader' => [
         'enabled' => true,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/sengked2.png',
+            'path' => 'vendor/adminlte/dist/img/sengkom.png',
             'alt' => 'AdminLTE Preloader Image',
             'effect' => 'animation__shake',
-            'width' => 500,
-            'height' => 100,
+            'width' => '65%',
+            'height' => 'auto',
         ],
     ],
 
@@ -148,12 +150,12 @@ return [
     |
     */
 
-    'layout_topnav' => null,
+    'layout_topnav' => true,
     'layout_boxed' => null,
     'layout_fixed_sidebar' => null,
     'layout_fixed_navbar' => null,
     'layout_fixed_footer' => null,
-    'layout_dark_mode' => null,
+    'layout_dark_mode' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -167,11 +169,11 @@ return [
     |
     */
 
-    'classes_auth_card' => 'card-outline card-warning',
-    'classes_auth_header' => 'bg-gradient-secondary',
+    'classes_auth_card' => 'card-outline card-orange',
+    'classes_auth_header' => '',
     'classes_auth_body' => '',
-    'classes_auth_footer' => 'text-center',
-    'classes_auth_icon' => 'fa-lg text-info',
+    'classes_auth_footer' => '',
+    'classes_auth_icon' => '',
     'classes_auth_btn' => 'btn-flat btn-warning',
 
     /*
@@ -187,14 +189,14 @@ return [
     */
 
     'classes_body' => '',
-    'classes_brand' => 'bg-orange',
+    'classes_brand' => 'bg-warning',
     'classes_brand_text' => '',
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-light-orange elevation-4',
+    'classes_sidebar' => 'sidebar-dark-warning elevation-4',
     'classes_sidebar_nav' => '',
-    'classes_topnav' => 'bg-warning navbar-light',
+    'classes_topnav' => 'bg-warning navbar-dark',
     'classes_topnav_nav' => 'navbar-expand',
     'classes_topnav_container' => 'container',
 
@@ -210,12 +212,12 @@ return [
     |
     */
 
-    'sidebar_mini' => 'lg',
-    'sidebar_collapse' => false,
+    'sidebar_mini' => false,
+    'sidebar_collapse' => true,
     'sidebar_collapse_auto_size' => false,
     'sidebar_collapse_remember' => false,
     'sidebar_collapse_remember_no_transition' => true,
-    'sidebar_scrollbar_theme' => 'os-theme-light',
+    'sidebar_scrollbar_theme' => 'os-theme-dark',
     'sidebar_scrollbar_auto_hide' => 'l',
     'sidebar_nav_accordion' => true,
     'sidebar_nav_animation_speed' => 300,
@@ -237,7 +239,7 @@ return [
     'right_sidebar_theme' => 'dark',
     'right_sidebar_slide' => true,
     'right_sidebar_push' => true,
-    'right_sidebar_scrollbar_theme' => 'os-theme-light',
+    'right_sidebar_scrollbar_theme' => 'os-theme-dark',
     'right_sidebar_scrollbar_auto_hide' => 'l',
 
     /*
@@ -290,137 +292,116 @@ return [
     */
 
     'menu' => [
-        // Navbar items:
+        // Navbar items
         [
-            'type' => 'navbar-search',
-            'text' => 'search',
-            'topnav_right' => true,
-        ],
-        [
-            'type' => 'fullscreen-widget',
-            'topnav_right' => true,
+            'text' => 'Menu',
+            'url' => '/home',
+            'icon' => 'fa fa-home',
+            'icon_color' => 'orange',
+            'topnav' => true,
+            'classes'  => 'd-none d-md-block'
         ],
 
         [
-            'text' => 'User',
+            'text' => 'Menu',
+            'url' => '/home',
+            'icon' => 'fa fa-home',
+            'icon_color' => 'orange',
+            'topnav' => true,
+            'submenu' => [
+                [
+                    'text' => 'Beranda',
+                    'url'  => '/home',
+                ],
+                [
+                    'text' => 'Pendaftaran',
+                    'url'  => '/pendaftaran',
+                    'can' => 'user-only',
+                ],
+                [
+                    'text' => 'Keluar Masuk',
+                    'url'  => '/keluarmasuk',
+                    'can' => 'user-only',
+                ],
+                [
+                    'text' => 'Pengguna',
+                    'url'  => '/users',
+                    'can' => 'admin-only',
+
+                ],
+                [
+                    'text' => 'Logtamu',
+                    'url'  => '/logtamu',
+                    'can' => 'admin-only',
+                ],
+                [
+                    'text' => 'Daftar Tamu',
+                    'url'  => '/daftam',
+                    'can' => 'admin-only',
+                ],
+            'classes'  => 'd-block d-sm-none'
+        ],
+
+                [
+                    'text' => 'Daftar Tamu',
+                    'url'  => '/daftam',
+                ],
+            'classes'  => 'd-block d-sm-none'
+        ],
+
+        [
+            'text' => 'Pengguna',
             'url' => '/users',
             'icon' => 'fa fa-users',
-            'icon_color' => 'yellow',
-            'can' => 'admin-only'
-            // 'active' => true,
+            'icon_color' => 'orange',
+            'can' => 'admin-only',
+            'topnav' => true,
+            'classes'  => 'd-none d-md-block'
         ],
-
+        [
+            'text' => 'Log',
+            'url' => '/logtamu',
+            'icon' => 'fa fa-history',
+            'icon_color' => 'orange',
+            'can' => 'admin-only',
+            // 'active' => true,
+            'topnav' => true,
+            'classes'  => 'd-none d-md-block'
+        ],
         [
             'text' => 'Pendaftaran',
             'url' => '/pendaftaran',
-            'icon' => 'fa fa-users',
-            'can' => 'user-only'
-            // 'active' => true,
+            'icon' => 'fa fa-book',
+            'icon_color' => 'orange',
+            'can' => 'user-only',
+            'topnav' => true,
+            'classes'  => 'd-none d-md-block'
         ],
 
         [
             'text' => 'Keluar Masuk',
-            'url' => '/pengunjung',
-            'icon' => 'fa fa-users',
-            'can' => 'user-only'
-            // 'active' => true,
+            'url' => '/keluarmasuk',
+            'icon' => 'fa fa-search',
+            'icon_color' => 'orange',
+            'can' => 'user-only',
+            'topnav' => true,
+            'classes'  => 'd-none d-md-block'
         ],
-
-
-        // Navbar items:
-        // [
-        //     'type'         => 'navbar-search',
-        //     'text'         => 'search',
-        //     'topnav_right' => true,
-        // ],
-        // [
-        //     'type'         => 'fullscreen-widget',
-        //     'topnav_right' => true,
-        // ],
-
-        // // Sidebar items:
-        // [
-        //     'type' => 'sidebar-menu-search',
-        //     'text' => 'search',
-        // ],
-        // [
-        //     'text' => 'blog',
-        //     'url'  => 'admin/blog',
-        //     'can'  => 'manage-blog',
-        // ],
-        // [
-        //     'text'        => 'pages',
-        //     'url'         => 'admin/pages',
-        //     'icon'        => 'far fa-fw fa-file',
-        //     'label'       => 4,
-        //     'label_color' => 'success',
-        // ],
-        // ['header' => 'account_settings'],
-        // [
-        //     'text' => 'profile',
-        //     'url'  => 'admin/settings',
-        //     'icon' => 'fas fa-fw fa-user',
-        // ],
-        // [
-        //     'text' => 'change_password',
-        //     'url'  => 'admin/settings',
-        //     'icon' => 'fas fa-fw fa-lock',
-        // ],
-        // [
-        //     'text'    => 'multilevel',
-        //     'icon'    => 'fas fa-fw fa-share',
-        //     'submenu' => [
-        //         [
-        //             'text' => 'level_one',
-        //             'url'  => '#',
-        //         ],
-        //         [
-        //             'text'    => 'level_one',
-        //             'url'     => '#',
-        //             'submenu' => [
-        //                 [
-        //                     'text' => 'level_two',
-        //                     'url'  => '#',
-        //                 ],
-        //                 [
-        //                     'text'    => 'level_two',
-        //                     'url'     => '#',
-        //                     'submenu' => [
-        //                         [
-        //                             'text' => 'level_three',
-        //                             'url'  => '#',
-        //                         ],
-        //                         [
-        //                             'text' => 'level_three',
-        //                             'url'  => '#',
-        //                         ],
-        //                     ],
-        //                 ],
-        //             ],
-        //         ],
-        //         [
-        //             'text' => 'level_one',
-        //             'url'  => '#',
-        //         ],
-        //     ],
-        // ],
-        // ['header' => 'labels'],
-        // [
-        //     'text'       => 'important',
-        //     'icon_color' => 'red',
-        //     'url'        => '#',
-        // ],
-        // [
-        //     'text'       => 'warning',
-        //     'icon_color' => 'yellow',
-        //     'url'        => '#',
-        // ],
-        // [
-        //     'text'       => 'information',
-        //     'icon_color' => 'cyan',
-        //     'url'        => '#',
-        // ],
-    ],
+[
+            'text' => 'Daftar Tamu',
+            'url' => '/daftam',
+            'icon' => 'fa fa-address-card',
+            'icon_color' => 'orange',
+            'can' => 'admin-only',
+            // 'active' => true,
+            'topnav' => true,
+'classes' => 'd-none d-md-block'
+        ],
+        [
+            'type' => 'fullscreen-widget',
+            'topnav_right' => true,
+   ],
+],
 
     /*
     |--------------------------------------------------------------------------
@@ -463,17 +444,20 @@ return [
                 [
                     'type' => 'js',
                     'asset' => true,
-                    'location' => '/vendor/datatables/js/jquery.dataTables.min.js',
+                    'location' =>
+                    '/vendor/datatables/js/jquery.dataTables.min.js',
                 ],
                 [
                     'type' => 'js',
                     'asset' => true,
-                    'location' => '/vendor/datatables/js/dataTables.bootstrap4.min.js',
+                    'location' =>
+                    '/vendor/datatables/js/dataTables.bootstrap4.min.js',
                 ],
                 [
                     'type' => 'css',
                     'asset' => true,
-                    'location' => '/vendor/datatables/css/dataTables.bootstrap4.min.css',
+                    'location' =>
+                    '/vendor/datatables/css/dataTables.bootstrap4.min.css',
                 ],
             ],
         ],
@@ -508,7 +492,8 @@ return [
                 [
                     'type' => 'js',
                     'asset' => true,
-                    'location' => '/vendor/sweetalert2/sweetalert2.min.js',
+                    'location' =>
+                    '/vendor/sweetalert2/sweetalert2.min.js',
                 ],
                 [
                     'type' => 'css',

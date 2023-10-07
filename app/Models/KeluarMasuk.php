@@ -14,11 +14,15 @@ class KeluarMasuk extends Model
         'tanggal_masuk',
         'tanggal_keluar',
         'foto_masuk',       
-        'waktu_masuk',
-        'waktu_keluar'
+        'keterangan',       
+        'detail',       
+        'keperluan',       
+        'lantai',       
+        'rak',       
+
     ];
 
     public function pendaftaran(){
-        return $this->belongsTo(Pendaftaran::class, 'id_pendaftaran', 'id', 'nama');
+        return $this->belongsTo(Pendaftaran::class, 'id_pendaftaran', 'id', 'nama', 'perusahaan', 'nomor_telepon');
         }
 }

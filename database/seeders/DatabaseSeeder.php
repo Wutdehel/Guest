@@ -13,8 +13,8 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         DB::table('users')->insert([
-            'email' => 'admin@gmail.com',
-            'password' => Hash::make('admin'),
+            'email' => 'adminsengked@gmail.com',
+            'password' => Hash::make('4dmin.s3m3ru'),
             'level' => 'admin',
             'created_at' => now(),
             'updated_at' => now()

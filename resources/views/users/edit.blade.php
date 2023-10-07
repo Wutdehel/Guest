@@ -1,7 +1,7 @@
 @extends('adminlte::page')
-@section('title', 'Edit User')
+@section('title', 'Edit Pengguna')
 @section('content_header')
-<h1 class="m-0 text-dark">Edit User</h1>
+<h1 class="m-0 text-dark">Edit Pengguna</h1>
 @stop
 @section('content')
 <form action="{{route('users.update', $user)}}" method="post">
@@ -17,12 +17,12 @@
                         @error('email') <span class="text-danger">{{$message}}</span> @enderror
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword">Password</label>
+                        <label for="exampleInputPassword">Kata Sandi</label>
                         <input type="password" class="form-control @error('password') is-invalid @enderror" id="exampleInputPassword" placeholder="Password" name="password">
                         @error('password') <span class="text-danger">{{$message}}</span> @enderror
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword">Konfirmasi Password</label>
+                        <label for="exampleInputPassword">Konfirmasi Kata Sandi</label>
                         <input type="password" class="form-control" id="exampleInputPassword" placeholder="Konfirmasi Password" name="password_confirmation">
                     </div>
                     <div class="form-group">
@@ -35,7 +35,7 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    <button type="submit" class="btn btn-warning">Simpan</button>
                     <a href="{{route('users.index')}}" class="btn btn-default">
                         Batal
                     </a>

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama', 300);
             $table->string('perusahaan', 200);
-            $table->integer('nomor_telepon');
+            $table->string('nomor_telepon', 13);
             $table->timestamps();
         });
     }
